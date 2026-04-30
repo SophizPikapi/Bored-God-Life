@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    public static GameManager selfRef;
+    public int starScore;
+    public int timer;
+    public int difficultyLevel;
+    public int gameLoop;
+    public int gameNum;
+    public enum AllPlayState { Menu, Meteor, Dog, Dragon, Cheese, Star, Shark, Score };
+    public AllPlayState currentPlayState;
+    public List<Transform> randomGame = new List<Transform>();
+    // Start is called before the first frame update
+    void Start()
+    {
+        Cursor.visible = false;
+        difficultyLevel = 0;
+        gameLoop = 0;
+        gameNum = 0;
+        starScore = 0;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (difficultyLevel == 0)
+        {
+            if (starScore == 9)
+            {
+                Debug.Log("You win!");
+            }
+        }
+    }
+}
