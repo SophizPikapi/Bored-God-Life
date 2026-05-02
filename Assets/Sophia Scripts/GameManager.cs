@@ -13,6 +13,12 @@ public class GameManager : MonoBehaviour
     public enum AllPlayState { Menu, Meteor, Dog, Dragon, Cheese, Star, Shark, Score };
     public AllPlayState currentPlayState;
     public List<Transform> randomGame = new List<Transform>();
+
+    [Header("Win Conditions")]
+    public bool dogWin = false;
+    public bool calendarWin = false;
+    public bool starWin = false;
+    public bool mouseWin = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +37,7 @@ public class GameManager : MonoBehaviour
             if (starScore == 9)
             {
                 Debug.Log("You win!");
+                starWin = true;
             }
         }
     }
