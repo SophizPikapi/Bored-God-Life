@@ -30,7 +30,7 @@ public class RandomMenu : MonoBehaviour
             //Stars Script
             if (timer <= 0 || refToGM.starWin)
             {
-                gameRand = Random.Range(0, 4);
+                gameRand = Random.Range(0, 3);
                 timer = 10f;
                 if (gameRand == 0)
                 {
@@ -41,10 +41,6 @@ public class RandomMenu : MonoBehaviour
                     SceneManager.LoadScene("Calendar");
                 }
                 if (gameRand == 2)
-                {
-                    SceneManager.LoadScene("Stars");
-                }
-                if (gameRand == 3)
                 {
                     SceneManager.LoadScene("Mouse");
                 }
