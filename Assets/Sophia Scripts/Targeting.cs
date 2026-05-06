@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Targeting : MonoBehaviour
 {
+    public CircleCollider2D cc;
     public GameManager refToGM;
     public GameObject refToStar;
     public Stars starShit;
@@ -12,6 +13,7 @@ public class Targeting : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
+        cc = GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame

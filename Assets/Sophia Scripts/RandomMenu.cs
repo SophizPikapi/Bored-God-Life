@@ -45,6 +45,24 @@ public class RandomMenu : MonoBehaviour
                     SceneManager.LoadScene("Mouse");
                 }
             }
+            else if (timer <= 0 && refToGM.starWin == false)
+            {
+                refToGM.gameLives--;
+                gameRand = Random.Range(0, 3);
+                timer = 10f;
+                if (gameRand == 0)
+                {
+                    SceneManager.LoadScene("Dog");
+                }
+                if (gameRand == 1)
+                {
+                    SceneManager.LoadScene("Calendar");
+                }
+                if (gameRand == 2)
+                {
+                    SceneManager.LoadScene("Mouse");
+                }
+            }
 
             //Mouse Script
 
