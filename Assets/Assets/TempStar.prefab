@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7641242645946680005}
   - component: {fileID: 3504932125466107033}
   - component: {fileID: 1967757568380988911}
+  - component: {fileID: 5475884708696433220}
   - component: {fileID: 5211645142292270412}
   m_Layer: 0
   m_Name: TempStar
@@ -102,6 +103,22 @@ MonoBehaviour:
   refToGM: {fileID: 0}
   refToMouse: {fileID: 0}
   starLight: 0
+--- !u!114 &5475884708696433220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078354969413106779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0b204e7bdd13f449a17609da0a4a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hover: {r: 0.4188679, g: 0, b: 0, a: 1}
+  touch: {r: 1, g: 0.33962262, b: 0.33962262, a: 1}
+  unTouched: {r: 1, g: 1, b: 1, a: 1}
+  sr: {fileID: 3504932125466107033}
 --- !u!61 &5211645142292270412
 BoxCollider2D:
   m_ObjectHideFlags: 0
