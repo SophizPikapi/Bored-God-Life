@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stars : MonoBehaviour
 {
+    public ParticleSystem ps;
     public BoxCollider2D bc;
     public GameManager refToGM;
     public GameObject refToMouse;
@@ -12,6 +13,7 @@ public class Stars : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ps = GameObject.Find("StarParticle").GetComponent<ParticleSystem>();
         starLight = false;
         bc = GetComponent<BoxCollider2D>();
     }
@@ -21,6 +23,7 @@ public class Stars : MonoBehaviour
     {
         if ((Input.GetMouseButtonDown(0)) && (this.GetComponent<SpriteRenderer>().bounds.Intersects(refToMouse.GetComponent<CircleCollider2D>().bounds)))
         {
+            ps.Play();
             refToGM.starScore++;
             starLight = true;
             Destroy(gameObject);
