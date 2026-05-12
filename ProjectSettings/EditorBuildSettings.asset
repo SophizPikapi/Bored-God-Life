@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Ziya Scenes/Mouse.unity
     guid: 3b38745a09979fd4292c1a7284c62609
   - enabled: 1
-    path: Assets/Kaden Scenes Update/Calendar 1.unity
+    path: Assets/Kaden Scenes Update/Calendar.unity
     guid: 147751d6eea880849bf92cd0ccd2d49e
   - enabled: 1
     path: Assets/Kaden Scenes Update/Calendar 2.unity
