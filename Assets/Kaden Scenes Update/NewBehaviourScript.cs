@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
-public class meteorshowerdate : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
     public bool use;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +16,14 @@ public class meteorshowerdate : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-
+        
     }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (Input.GetMouseButton(0))
         {
             use = true;
-            SceneManager.LoadScene("scene 2");
+            SceneManager.LoadScene("scene 3");
             Debug.Log("loadscene");
         }
     }
@@ -35,7 +33,7 @@ public class meteorshowerdate : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             use = true;
-            SceneManager.LoadScene("scene 2");
+            SceneManager.LoadScene("scene 3");
             Debug.Log("loadscene");
         }
     }
