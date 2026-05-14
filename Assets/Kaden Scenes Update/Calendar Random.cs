@@ -7,15 +7,33 @@ public class CalendarRandom : MonoBehaviour
 {
     //public CalendarChoice choice;
     public GameManager refToGM;
-    public GameObject[] calendarList;
     public int randomCalendar;
+    public int calendarSpot;
+    public int textSpot;
+    public int randomText;
     public TextMeshPro refToText;
+    public List<GameObject> TextList = new List<GameObject>();
+    public List<GameObject> calendarList = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
-        randomCalendar = Random.Range(0, calendarList.Length);
+        randomCalendar = Random.Range(0, calendarList.Count);
+        randomText = Random.Range(0, TextList.Count);
+
         calendarList[randomCalendar].GetComponent<SpriteRenderer>().color = Color.green;
         calendarList[randomCalendar].GetComponent<CalendarChoice>().isMeteor = true;
+        refToText.transform.position = calendarList[randomCalendar].transform.position;
+
+        calendarList.RemoveAt(randomCalendar);
+        TextList.RemoveAt(randomText);
+
+        for (int i = 0; i < calendarList.Count; i++)
+        {
+            calendarSpot = Random.Range(0, calendarList.Count);
+            textSpot = Random.Range(0, TextList.Count);
+            print("TEST");
+            TextList[textSpot].transform.position = calendarList[calendarSpot].transform.position;
+        }
         //use get component to the randomly chosen date, access the script of that, 
     }
 
