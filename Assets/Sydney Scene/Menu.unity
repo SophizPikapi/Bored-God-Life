@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -326,6 +325,8 @@ MonoBehaviour:
   clicked: {fileID: -1464886850, guid: becbef42113ed6b45a13636b43d21db3, type: 3}
   mouse: {fileID: 280878900}
   shootingIcon: {fileID: 0}
+  winScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
   targeted: {fileID: 0}
   aiming: {fileID: 0}
   currentlyTargeting: 0
@@ -905,6 +906,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &848848278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 848848280}
+  - component: {fileID: 848848279}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &848848279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848848278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c915458c1f5b8448acd58ca3bd35ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starScore: 0
+  timer: 0
+  difficultyLevel: 0
+  gameLoop: 0
+  gameNum: 0
+  gameLives: 0
+  currentPlayState: 0
+  randomGame: []
+  dogWin: 0
+  calendarWin: 0
+  starWin: 0
+  mouseWin: 0
+--- !u!4 &848848280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848848278}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.3148394, y: -1.8167468, z: -0.030943207}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &855605888
 GameObject:
   m_ObjectHideFlags: 0
@@ -11086,13 +11143,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1363150386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5392b3c8257f98f4e85177d81fe69354, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b3128b98aca6884492b2c5cee725be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refToGM: {fileID: 0}
+  refToGM: {fileID: 848848279}
   gameRand: 0
   timer: 10
+  delayTimer: 3
   gameStart: 0
+  sceneList:
+  - Stars
+  - Calendar
+  - Dog
+  - Mouse
+  sceneNum: 0
+  pointScored: 0
+  timerStart: 0
 --- !u!1 &1385044313
 GameObject:
   m_ObjectHideFlags: 0
@@ -11795,6 +11861,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 848848280}
   - {fileID: 606051127}
   - {fileID: 1771165218}
   - {fileID: 669727933}

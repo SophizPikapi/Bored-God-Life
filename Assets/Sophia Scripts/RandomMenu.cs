@@ -62,23 +62,14 @@ public class RandomMenu : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        //gameRand = Random.Range(0, 4);
-        //if (gameRand == 0)
-        //{
-        //    SceneManager.LoadScene("Dog");
-        //}
-        //if (gameRand == 1)
-        //{
-        //    SceneManager.LoadScene("Calendar");
-        //}
-        //if (gameRand == 2)
-        //{
-        //    SceneManager.LoadScene("Stars");
-        //}
-        //if (gameRand == 3)
-        //{
-        //    SceneManager.LoadScene("Mouse");
-        //}
-        //gameStart = true;
+        gameStart = true;
+
+        DontDestroyOnLoad(this.gameObject);
+        sceneNum = Random.Range(0, sceneList.Count);
+        SceneManager.LoadScene(sceneList[sceneNum]);
+        sceneList.RemoveAt(sceneNum);
+        timer = 10f;
+        timerStart = true;
+        delayTimer = 3f;
     }
 }
