@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MouseMovement : MonoBehaviour
 {
@@ -8,7 +9,6 @@ public class MouseMovement : MonoBehaviour
     public bool Zapped = false;
     public bool GameStart = false;
     public float speed;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +56,7 @@ public class MouseMovement : MonoBehaviour
 
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Electricity"))
@@ -65,6 +66,10 @@ public class MouseMovement : MonoBehaviour
             Zapped = true;
         }
 
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            //SceneManager.LoadScene
+        }
     }
 
 }

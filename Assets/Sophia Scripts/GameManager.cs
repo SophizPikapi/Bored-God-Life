@@ -10,17 +10,24 @@ public class GameManager : MonoBehaviour
     public int difficultyLevel;
     public int gameLoop;
     public int gameNum;
+    public int gameLives;
     public enum AllPlayState { Menu, Meteor, Dog, Dragon, Cheese, Star, Shark, Score };
     public AllPlayState currentPlayState;
     public List<Transform> randomGame = new List<Transform>();
+
+    [Header("Win Conditions")]
+    public bool dogWin = false;
+    public bool calendarWin = false;
+    public bool starWin = false;
+    public bool mouseWin = false;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = false;
-        difficultyLevel = 0;
         gameLoop = 0;
         gameNum = 0;
         starScore = 0;
+        gameLives = 3;
     }
 
     // Update is called once per frame
@@ -31,6 +38,23 @@ public class GameManager : MonoBehaviour
             if (starScore == 9)
             {
                 Debug.Log("You win!");
+                starWin = true;
+            }
+        }
+        else if (difficultyLevel == 1)
+        {
+            if (starScore == 11)
+            {
+                Debug.Log("You win!");
+                starWin = true;
+            }
+        }
+        else if (difficultyLevel == 2)
+        {
+            if (starScore == 13)
+            {
+                Debug.Log("You win!");
+                starWin = true;
             }
         }
     }
