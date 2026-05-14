@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -172,8 +171,13 @@ MonoBehaviour:
   difficultyLevel: 0
   gameLoop: 0
   gameNum: 0
+  gameLives: 0
   currentPlayState: 0
   randomGame: []
+  dogWin: 0
+  calendarWin: 0
+  starWin: 0
+  mouseWin: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,8 +725,8 @@ Transform:
   m_GameObject: {fileID: 1315921016}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.173, y: -3.78, z: 0}
-  m_LocalScale: {x: 19.542583, y: 4.016561, z: 1}
+  m_LocalPosition: {x: 0.4298, y: -3.78, z: 0}
+  m_LocalScale: {x: 26.886848, y: 4.016561, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1011,7 +1015,7 @@ PrefabInstance:
       objectReference: {fileID: 1486216024}
     - target: {fileID: 89429622769668616, guid: f749cc018d462c24a8b82ead9fa419e2, type: 3}
       propertyPath: speed
-      value: 500
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 268039424160357638, guid: f749cc018d462c24a8b82ead9fa419e2, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
