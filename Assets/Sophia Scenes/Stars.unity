@@ -13827,7 +13827,8 @@ MonoBehaviour:
   refToGM: {fileID: 1608597688}
   gameRand: 0
   timer: 10
-  gameStart: 0
+  delayTimer: 3
+  gameStart: 1
   sceneList:
   - Stars
   - Calendar
