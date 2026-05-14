@@ -13,6 +13,7 @@ public class RandomMenu : MonoBehaviour
     public List<string> sceneList = new List<string>();
     public int sceneNum;
     public int pointScored;
+    public bool timerStart;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,18 +27,20 @@ public class RandomMenu : MonoBehaviour
     {
         if (gameStart)
         {
-            timer -= Time.deltaTime;
+            timerStart = true;
 
             if (refToGM.starWin || refToGM.mouseWin || refToGM.calendarWin || refToGM.dogWin)
             {
                 pointScored++;
                 delayTimer -= Time.deltaTime;
+                timerStart = false;
                 Debug.Log("You scored a point!");
             }
             else if (timer <= 0)
             {
                 refToGM.gameLives--;
                 delayTimer -= Time.deltaTime;
+                timerStart = false;
                 Debug.Log("You lost a life!");
             }
 
@@ -49,7 +52,12 @@ public class RandomMenu : MonoBehaviour
             SceneManager.LoadScene(sceneList[sceneNum]);
             sceneList.RemoveAt(sceneNum);
             timer = 10f;
+            timerStart = true;
             delayTimer = 3f;
+        }
+        if (timerStart)
+        {
+            timer -= Time.deltaTime;
         }
     }
     private void OnMouseDown()
