@@ -5,18 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class RandomMenu : MonoBehaviour
 {
+    public GameManager refToGM;
     public int gameRand;
     public float timer = 10f;
+    public float delayTimer = 3f;
     public bool gameStart = false;
     public List<string> sceneList = new List<string>();
     public int sceneNum;
+    public int pointScored;
     // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-        sceneNum = Random.Range(0, sceneList.Count);
-        SceneManager.LoadScene(sceneList[sceneNum]);
-        sceneList.RemoveAt(sceneNum);
+        
 
     }
 
@@ -26,51 +27,29 @@ public class RandomMenu : MonoBehaviour
         if (gameStart)
         {
             timer -= Time.deltaTime;
-            //Dog Script
 
+            if (refToGM.starWin || refToGM.mouseWin || refToGM.calendarWin || refToGM.dogWin)
+            {
+                pointScored++;
+                delayTimer -= Time.deltaTime;
+                Debug.Log("You scored a point!");
+            }
+            else if (timer <= 0)
+            {
+                refToGM.gameLives--;
+                delayTimer -= Time.deltaTime;
+                Debug.Log("You lost a life!");
+            }
 
-            //Calendar Script
-
-
-            //Stars Script
-            //if (timer <= 0 || refToGM.starWin)
-            //{
-            //    gameRand = Random.Range(0, 3);
-            //    timer = 10f;
-            //    if (gameRand == 0)
-            //    {
-            //        SceneManager.LoadScene("Dog");
-            //    }
-            //    if (gameRand == 1)
-            //    {
-            //        SceneManager.LoadScene("Calendar");
-            //    }
-            //    if (gameRand == 2)
-            //    {
-            //        SceneManager.LoadScene("Mouse");
-            //    }
-            //}
-            //else if (timer <= 0 && refToGM.starWin == false)
-            //{
-            //    refToGM.gameLives--;
-            //    gameRand = Random.Range(0, 3);
-            //    timer = 10f;
-            //    if (gameRand == 0)
-            //    {
-            //        SceneManager.LoadScene("Dog");
-            //    }
-            //    if (gameRand == 1)
-            //    {
-            //        SceneManager.LoadScene("Calendar");
-            //    }
-            //    if (gameRand == 2)
-            //    {
-            //        SceneManager.LoadScene("Mouse");
-            //    }
-            //}
-
-            //Mouse Script
-
+        }
+        if (delayTimer <= 0)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            sceneNum = Random.Range(0, sceneList.Count);
+            SceneManager.LoadScene(sceneList[sceneNum]);
+            sceneList.RemoveAt(sceneNum);
+            timer = 10f;
+            delayTimer = 3f;
         }
     }
     private void OnMouseDown()
