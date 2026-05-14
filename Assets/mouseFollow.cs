@@ -9,8 +9,11 @@ public class mouseFollow : MonoBehaviour
     public Sprite clicked;
     public SpriteRenderer mouse;
     public SpriteRenderer shootingIcon;
+    public GameObject winScreen;
+    public GameObject loseScreen;
     public Sprite targeted;
     public Sprite aiming;
+    private bool isDog;
     public bool currentlyTargeting;
     void Start()
     {
@@ -26,6 +29,16 @@ public class mouseFollow : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             mouse.sprite = clicked;
+            if (isDog == true)
+            {
+                Debug.Log("you win!");
+                winScreen.transform.position = new Vector2(0,0);
+            }
+            else
+            {
+                Debug.Log("game Over!");
+                loseScreen.transform.position = new Vector2(0,0);
+            }
         }
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
@@ -49,12 +62,20 @@ public class mouseFollow : MonoBehaviour
         {
             currentlyTargeting = true;
         }
+
+        if (collision.gameObject.tag == "glassDog")
+        {
+            currentlyTargeting = true;
+            isDog = true;
+        }
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Shootable")
+        if (collision.gameObject.tag == "Shootable" || collision.gameObject.tag == "glassDog")
         {
             currentlyTargeting = false;
+            isDog = false;
         }
     }
 
