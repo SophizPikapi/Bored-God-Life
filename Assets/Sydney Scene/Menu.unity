@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6ca31b597700644a691b6aeba0bd7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refToGM: {fileID: 0}
+  refToGM: {fileID: 848848279}
   unclicked: {fileID: 420660992, guid: becbef42113ed6b45a13636b43d21db3, type: 3}
   clicked: {fileID: -1464886850, guid: becbef42113ed6b45a13636b43d21db3, type: 3}
   mouse: {fileID: 280878900}
@@ -981,18 +981,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c915458c1f5b8448acd58ca3bd35ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
+  timer: 10
+  pointScored: 0
   difficultyLevel: 0
   gameLoop: 0
-  gameNum: 0
   gameLives: 0
   gameStart: 0
-  currentPlayState: 0
-  randomGame: []
   dogWin: 0
   calendarWin: 0
   starWin: 0
   mouseWin: 0
+  dogPlayed: 0
+  calendarPlayed: 0
+  starPlayed: 0
+  mousePlayed: 0
 --- !u!4 &848848280
 Transform:
   m_ObjectHideFlags: 0

@@ -6,37 +6,108 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager selfRef;
-    public int timer;
+
+    public float timer = 10f;
+
+    public int pointScored;
     public int difficultyLevel;
     public int gameLoop;
-    public int gameNum;
     public int gameLives;
+
     public bool gameStart;
-    public enum AllPlayState { Menu, Meteor, Dog, Dragon, Cheese, Star, Shark, Score };
-    public AllPlayState currentPlayState;
-    public List<Transform> randomGame = new List<Transform>();
 
     [Header("Win Conditions")]
     public bool dogWin = false;
     public bool calendarWin = false;
     public bool starWin = false;
     public bool mouseWin = false;
-    // Start is called before the first frame update
+
+    [Header("Played Conditions")]
+    public bool dogPlayed;
+    public bool calendarPlayed;
+    public bool starPlayed;
+    public bool mousePlayed;
+
     void Start()
     {
-        SceneManager.LoadScene("Menu");
+        timer = 10f;
         Cursor.visible = false;
+
         gameLoop = 0;
-        gameNum = 0;
         gameLives = 3;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (gameStart)
-        {
 
+        timer -= Time.deltaTime;
+
+        // STAR WIN
+        if (starWin)
+        {
+            starPlayed = true;
+            pointScored++;
+
+            LoadRandomScene();
         }
+
+        // CALENDAR WIN
+        else if (calendarWin)
+        {
+            calendarPlayed = true;
+            pointScored++;
+
+            LoadRandomScene();
+        }
+
+        // MOUSE WIN
+        else if (mouseWin)
+        {
+            mousePlayed = true;
+            pointScored++;
+
+            LoadRandomScene();
+        }
+
+        // DOG WIN
+        else if (dogWin)
+        {
+            dogPlayed = true;
+            pointScored++;
+
+            LoadRandomScene();
+        }
+    }
+
+    void LoadRandomScene()
+    {
+        List<string> availableScenes = new List<string>();
+
+        // Only add scenes that haven't been played
+        if (!dogPlayed)
+            availableScenes.Add("Dog");
+
+        if (!calendarPlayed)
+            availableScenes.Add("Calendar");
+
+        if (!starPlayed)
+            availableScenes.Add("Star");
+
+        if (!mousePlayed)
+            availableScenes.Add("Mouse");
+
+        // If all scenes have been played
+        if (availableScenes.Count == 0)
+        {
+            SceneManager.LoadScene("Score");
+            return;
+        }
+
+        // Pick a random scene from remaining options
+        int randomIndex = Random.Range(0, availableScenes.Count + 1);
+
+        SceneManager.LoadScene(availableScenes[randomIndex]);
+        timer = 10f;
     }
 }

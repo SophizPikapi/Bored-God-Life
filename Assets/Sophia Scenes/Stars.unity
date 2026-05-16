@@ -2378,6 +2378,10 @@ PrefabInstance:
       propertyPath: refToMouse
       value: 
       objectReference: {fileID: 1554594896}
+    - target: {fileID: 1967757568380988911, guid: 2e738a80bdd25c6488740504cde4cc06, type: 3}
+      propertyPath: refToScore
+      value: 
+      objectReference: {fileID: 535287396}
     - target: {fileID: 2078354969413106779, guid: 2e738a80bdd25c6488740504cde4cc06, type: 3}
       propertyPath: m_Name
       value: TempStar
@@ -13311,17 +13315,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 10
+  pointScored: 0
   difficultyLevel: 0
   gameLoop: 0
-  gameNum: 0
   gameLives: 0
   gameStart: 1
-  currentPlayState: 0
-  randomGame: []
   dogWin: 0
   calendarWin: 0
   starWin: 0
   mouseWin: 0
+  dogPlayed: 0
+  calendarPlayed: 0
+  starPlayed: 0
+  mousePlayed: 0
 --- !u!4 &1608597689
 Transform:
   m_ObjectHideFlags: 0

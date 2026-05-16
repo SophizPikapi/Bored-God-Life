@@ -6,37 +6,36 @@ using UnityEngine.SceneManagement;
 public class MainMenuStart : MonoBehaviour
 {
     public GameManager refToGM;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnMouseDown()
     {
         refToGM.gameStart = true;
-        refToGM.gameNum = Random.Range(0, 4);
 
-        if (refToGM.gameNum == 0)
+        // Create a list of available scenes
+        List<string> availableScenes = new List<string>();
+
+        if (!refToGM.dogPlayed)
+            availableScenes.Add("Dog");
+
+        if (!refToGM.calendarPlayed)
+            availableScenes.Add("Calendar");
+
+        if (!refToGM.starPlayed)
+            availableScenes.Add("Star");
+
+        if (!refToGM.mousePlayed)
+            availableScenes.Add("Mouse");
+
+        // Safety check
+        if (availableScenes.Count == 0)
         {
-            SceneManager.LoadScene("Stars");
+            SceneManager.LoadScene("Score");
+            return;
         }
-        if (refToGM.gameNum == 1)
-        {
-            SceneManager.LoadScene("Dog");
-        }
-        if (refToGM.gameNum == 2)
-        {
-            SceneManager.LoadScene("Calendar");
-        }
-        if (refToGM.gameNum == 3)
-        {
-            SceneManager.LoadScene("Mouse");
-        }
+
+        // Pick random scene
+        int randomIndex = Random.Range(0, availableScenes.Count + 1);
+
+        SceneManager.LoadScene(availableScenes[randomIndex]);
     }
 }
