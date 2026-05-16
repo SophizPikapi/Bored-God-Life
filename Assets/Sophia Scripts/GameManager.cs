@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         Cursor.visible = false;
         gameLoop = 0;
         gameNum = 0;
@@ -41,21 +42,21 @@ public class GameManager : MonoBehaviour
                 starWin = true;
             }
         }
-        else if (difficultyLevel == 1)
-        {
-            if (starScore == 11)
-            {
-                Debug.Log("You win!");
-                starWin = true;
-            }
-        }
-        else if (difficultyLevel == 2)
-        {
-            if (starScore == 13)
-            {
-                Debug.Log("You win!");
-                starWin = true;
-            }
-        }
+        //else if (difficultyLevel == 1)
+        //{
+        //    if (starScore == 11)
+        //    {
+        //        Debug.Log("You win!");
+        //        starWin = true;
+        //    }
+        //}
+        //else if (difficultyLevel == 2)
+        //{
+        //    if (starScore == 13)
+        //    {
+        //        Debug.Log("You win!");
+        //        starWin = true;
+        //    }
+        //}
     }
 }

@@ -14136,6 +14136,7 @@ MonoBehaviour:
   sceneNum: 0
   pointScored: 0
   timerStart: 0
+  delayStart: 0
 --- !u!4 &2094982128
 Transform:
   m_ObjectHideFlags: 0

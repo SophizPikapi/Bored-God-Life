@@ -28,7 +28,14 @@ public class RandomMenu : MonoBehaviour
     {
         if (gameStart)
         {
-            timerStart = true;
+            if (timerStart)
+            {
+                timer -= Time.deltaTime;
+            }
+            if (delayStart)
+            {
+                delayTimer -= Time.deltaTime;
+            }
 
             if (refToGM.starWin || refToGM.mouseWin || refToGM.calendarWin || refToGM.dogWin)
             {
@@ -48,23 +55,11 @@ public class RandomMenu : MonoBehaviour
         }
         if (delayTimer <= 0)
         {
-            DontDestroyOnLoad(this.gameObject);
-            sceneNum = Random.Range(0, sceneList.Count);
-            SceneManager.LoadScene(sceneList[sceneNum]);
-            sceneList.RemoveAt(sceneNum);
-            timer = 10f;
+            Randomisation();
+            delayStart = false;
             timerStart = true;
-            delayTimer = 3f;
-            delayStart = true;
         }
-        if (timerStart)
-        {
-            timer -= Time.deltaTime;
-        }
-        if (delayStart)
-        {
-            delayTimer -= Time.deltaTime;
-        }
+        
     }
     private void OnMouseDown()
     {
@@ -77,5 +72,22 @@ public class RandomMenu : MonoBehaviour
         timer = 10f;
         timerStart = true;
         delayTimer = 3f;
+        delayStart = false;
+    }
+    public void Randomisation()
+    {
+        DontDestroyOnLoad(this.gameObject);
+        sceneNum = Random.Range(0, sceneList.Count);
+        SceneManager.LoadScene(sceneList[sceneNum]);
+        sceneList.RemoveAt(sceneNum);
+        timer = 10f;
+        delayTimer = 3f;
+        timerStart = true;
+        delayStart = false;
+
+        refToGM.starWin = false;
+        refToGM.dogWin = false;
+        refToGM.calendarWin = false;
+        refToGM.mouseWin = false;
     }
 }

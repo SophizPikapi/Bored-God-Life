@@ -5,6 +5,7 @@ using UnityEngine;
 public class mouseFollow : MonoBehaviour
 {
     // Start is called before the first frame update#
+    public GameManager refToGM;
     public Sprite unclicked;
     public Sprite clicked;
     public SpriteRenderer mouse;
@@ -33,6 +34,7 @@ public class mouseFollow : MonoBehaviour
             {
                 Debug.Log("you win!");
                 winScreen.transform.position = new Vector2(0,0);
+                refToGM.dogWin = true;
             }
             else
             {
