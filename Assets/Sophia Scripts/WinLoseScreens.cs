@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WinLoseScreens : MonoBehaviour
 {
+    public RandomMenu rm;
     public GameManager refToGM;
     public GameObject winScreen;
     public GameObject loseScreen;
@@ -19,6 +20,10 @@ public class WinLoseScreens : MonoBehaviour
         if (refToGM.starWin)
         {
             winScreen.transform.position = new Vector3(0, 0.65f, 0);
+        }
+        if (rm.timer <= 0 && !refToGM.starWin)
+        {
+            loseScreen.transform.position = new Vector3(0, 0.65f, 0);
         }
     }
 }
