@@ -853,10 +853,15 @@ MonoBehaviour:
   timer: 10
   delayTimer: 3
   gameStart: 0
-  sceneList: []
+  sceneList:
+  - Stars
+  - Dog
+  - Calendar
+  - Mouse
   sceneNum: 0
   pointScored: 0
   timerStart: 0
+  delayStart: 0
 --- !u!4 &902096009
 Transform:
   m_ObjectHideFlags: 0
