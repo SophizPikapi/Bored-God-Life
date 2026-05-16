@@ -8,11 +8,13 @@ TagManager:
   - glassDog
   - Teeth
   - badTooth
+  - Mouse
+  - Electricity
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Mouse
   - Water
   - UI
   - 
