@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Sydney Scene/Menu.unity
+    guid: 6d9d0554de286464fbab2a36c84e2152
+  - enabled: 1
     path: Assets/Sophia Scenes/Stars.unity
     guid: 34ee9197169edf64a905b75caa296b75
   - enabled: 1

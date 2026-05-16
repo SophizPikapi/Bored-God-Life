@@ -1217,6 +1217,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &535287395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 535287397}
+  - component: {fileID: 535287396}
+  m_Layer: 0
+  m_Name: StarScore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &535287396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535287395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65c1dbd39649384da6c62f1e52b6279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refToGM: {fileID: 1608597688}
+  starScore: 0
+--- !u!4 &535287397
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535287395}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.43302745, y: -2.0006013, z: -0.07277104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &555072655
 GameObject:
   m_ObjectHideFlags: 0
@@ -13264,12 +13310,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c915458c1f5b8448acd58ca3bd35ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starScore: 0
   timer: 10
   difficultyLevel: 0
   gameLoop: 0
   gameNum: 0
   gameLives: 0
+  gameStart: 1
   currentPlayState: 0
   randomGame: []
   dogWin: 0
@@ -13320,7 +13366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2354f78b8ff2e418deaed28b422080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rm: {fileID: 2094982127}
+  rm: {fileID: 0}
   refToGM: {fileID: 1608597688}
   winScreen: {fileID: 2006974089}
   loseScreen: {fileID: 1045436461}
@@ -14094,64 +14140,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2094982126
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2094982128}
-  - component: {fileID: 2094982127}
-  m_Layer: 0
-  m_Name: SceneManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2094982127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094982126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5392b3c8257f98f4e85177d81fe69354, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refToGM: {fileID: 1608597688}
-  gameRand: 0
-  timer: 10
-  delayTimer: 3
-  gameStart: 1
-  sceneList:
-  - Stars
-  - Calendar
-  - Dog
-  - Mouse
-  sceneNum: 0
-  pointScored: 0
-  timerStart: 0
-  delayStart: 0
---- !u!4 &2094982128
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094982126}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08483094, y: -1.051692, z: 0.04953528}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2108117503
 GameObject:
   m_ObjectHideFlags: 0
@@ -14356,7 +14344,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1608597689}
-  - {fileID: 2094982128}
+  - {fileID: 535287397}
   - {fileID: 519420032}
   - {fileID: 1554594899}
   - {fileID: 619394802}

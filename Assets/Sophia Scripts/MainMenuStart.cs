@@ -6,14 +6,6 @@ using UnityEngine.SceneManagement;
 public class MainMenuStart : MonoBehaviour
 {
     public GameManager refToGM;
-    public int gameRand;
-    public float timer = 10f;
-    public float delayTimer = 3f;
-    public bool gameStart = false;
-    public List<string> sceneList = new List<string>();
-    public int sceneNum;
-    public int pointScored;
-    public bool timerStart;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +19,24 @@ public class MainMenuStart : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        gameStart = true;
-        sceneNum = Random.Range(0, sceneList.Count);
-        SceneManager.LoadScene(sceneList[sceneNum]);
-        sceneList.RemoveAt(sceneNum);
-        timer = 10f;
-        timerStart = true;
-        delayTimer = 3f;
+        refToGM.gameStart = true;
+        refToGM.gameNum = Random.Range(0, 4);
+
+        if (refToGM.gameNum == 0)
+        {
+            SceneManager.LoadScene("Stars");
+        }
+        if (refToGM.gameNum == 1)
+        {
+            SceneManager.LoadScene("Dog");
+        }
+        if (refToGM.gameNum == 2)
+        {
+            SceneManager.LoadScene("Calendar");
+        }
+        if (refToGM.gameNum == 3)
+        {
+            SceneManager.LoadScene("Mouse");
+        }
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stars : MonoBehaviour
 {
+    public StarScore refToScore;
     public ParticleSystem ps;
     public BoxCollider2D bc;
     public GameManager refToGM;
@@ -24,7 +25,7 @@ public class Stars : MonoBehaviour
         if ((Input.GetMouseButtonDown(0)) && (this.GetComponent<SpriteRenderer>().bounds.Intersects(refToMouse.GetComponent<CircleCollider2D>().bounds)))
         {
             ps.Play();
-            refToGM.starScore++;
+            refToScore.starScore++;
             starLight = true;
             Destroy(gameObject);
         }
