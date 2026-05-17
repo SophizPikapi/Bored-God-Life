@@ -21,12 +21,14 @@ public class GameManager : MonoBehaviour
     public bool calendarWin = false;
     public bool starWin = false;
     public bool mouseWin = false;
+    public bool sharkWin = false;
 
     [Header("Played Conditions")]
     public bool dogPlayed;
     public bool calendarPlayed;
     public bool starPlayed;
     public bool mousePlayed;
+    public bool sharkPlayed;
 
     void Start()
     {
@@ -78,6 +80,16 @@ public class GameManager : MonoBehaviour
 
             LoadRandomScene();
         }
+
+        // Shark WIN
+        else if (sharkWin)
+        {
+            sharkPlayed = true;
+            pointScored++;
+
+            LoadRandomScene();
+        }
+
     }
 
     void LoadRandomScene()
@@ -96,6 +108,9 @@ public class GameManager : MonoBehaviour
 
         if (!mousePlayed)
             availableScenes.Add("Mouse");
+
+        if (!sharkPlayed)
+            availableScenes.Add("Shark");
 
         // If all scenes have been played
         if (availableScenes.Count == 0)

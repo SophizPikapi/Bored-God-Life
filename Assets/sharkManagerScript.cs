@@ -8,6 +8,7 @@ public class sharkManagerScript : MonoBehaviour
     public Color bad = Color.yellow;
     public int totalTeeth;
     public int collectedTeeth;
+    public GameManager refToGM;
     public GameObject winScreen;
     public GameObject loseScreen;
 
@@ -24,6 +25,7 @@ public class sharkManagerScript : MonoBehaviour
         {
             Debug.Log("You Win!");
             winScreen.transform.position = new Vector2 (0, 0);
+            refToGM.sharkWin = true;
         }
     }
 }

@@ -300,18 +300,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c915458c1f5b8448acd58ca3bd35ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starScore: 0
   timer: 0
+  pointScored: 0
   difficultyLevel: 0
   gameLoop: 0
-  gameNum: 0
   gameLives: 0
-  currentPlayState: 0
-  randomGame: []
+  gameStart: 0
   dogWin: 0
   calendarWin: 0
   starWin: 0
   mouseWin: 0
+  dogPlayed: 0
+  calendarPlayed: 0
+  starPlayed: 0
+  mousePlayed: 0
 --- !u!1 &341282993
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +425,7 @@ GameObject:
   - component: {fileID: 492894064}
   - component: {fileID: 492894063}
   - component: {fileID: 492894062}
+  - component: {fileID: 492894065}
   m_Layer: 0
   m_Name: EndPoint
   m_TagString: Untagged
@@ -459,7 +462,7 @@ EdgeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -543,6 +546,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &492894065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492894061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea42d6300e062142b969a5b23cb49a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refToGM: {fileID: 320133059}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
