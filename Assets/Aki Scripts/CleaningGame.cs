@@ -2,9 +2,19 @@
 
 public class CleaningGame : MonoBehaviour
 {
+    [Header("Cursor Settings")]
     public Transform handCursor;
-    public float safeWipeSpeed = 15f;      // Max speed before damage
-    public float minWipeSpeed = 0.5f;      // Min speed to clean (Changed this!)
+
+    [Header("Visuals (Sprites)")]
+    public SpriteRenderer cursorSpriteRenderer; 
+    public Sprite idleSprite;                   
+    public Sprite perfectSprite;                
+    public Sprite tooFastSprite;            
+    public Sprite tooSoftSprite;
+
+    [Header("Game Settings")]
+    public float safeWipeSpeed = 15f;
+    public float minWipeSpeed = 1.5f;
     public GameObject scratchMaskPrefab;
     public float scratchCooldown = 0.2f;
 
@@ -25,35 +35,58 @@ public class CleaningGame : MonoBehaviour
             handCursor.position = currentMousePos;
         }
 
+        if (!Input.GetMouseButton(0))
+        {
+            if (cursorSpriteRenderer != null && idleSprite != null)
+            {
+                cursorSpriteRenderer.sprite = idleSprite;
+            }
+        }
+
+
         if (Input.GetMouseButtonDown(0))
         {
             lastMousePos = currentMousePos;
-            Debug.Log("🖱️ Click Started!");
         }
         else if (Input.GetMouseButton(0))
         {
             float speed = Vector2.Distance(currentMousePos, lastMousePos) / Time.deltaTime;
 
-            // LOG 1: Check the actual speed numbers
-            Debug.Log($"Speed: {speed}");
+
+            if (cursorSpriteRenderer != null)
+            {
+                if (speed > safeWipeSpeed)
+                {
+                    cursorSpriteRenderer.sprite = tooFastSprite; 
+                }
+                else if (speed > minWipeSpeed)
+                {
+                    cursorSpriteRenderer.sprite = perfectSprite; 
+                }
+                else
+                {
+                    cursorSpriteRenderer.sprite = tooSoftSprite; 
+                }
+            }
+
 
             if (speed > safeWipeSpeed)
             {
-                Debug.Log("⚠️ TOO FAST! Attempting to scratch...");
                 if (Time.time > lastScratchTime + scratchCooldown)
                 {
                     Instantiate(scratchMaskPrefab, currentMousePos, Quaternion.identity);
                     lastScratchTime = Time.time;
+
+                    if (KeyboardGameManager.Instance != null)
+                    {
+                        KeyboardGameManager.Instance.AddScratch();
+                    }
                 }
             }
-            
-            else if (speed > minWipeSpeed) 
+            else if (speed > minWipeSpeed)
             {
-                Debug.Log("✅ Safe speed. Scanning for dirt..."); 
-
-                // CHANGED THIS LINE: OverlapPointAll is much more reliable for 2D mouse clicks
                 Collider2D[] hits = Physics2D.OverlapPointAll(currentMousePos);
-                
+
                 foreach (Collider2D hit in hits)
                 {
                     if (hit != null && hit.CompareTag("Dirt"))
@@ -61,16 +94,10 @@ public class CleaningGame : MonoBehaviour
                         Dirt dirt = hit.GetComponent<Dirt>();
                         if (dirt != null)
                         {
-                            Debug.Log("🧼 CLEANING DIRT!");
                             dirt.CleanDirt();
                         }
                     }
                 }
-            }
-            else
-            {
-                // LOG 5: Moving too slow
-                Debug.Log("🐢 Moving too slow to clean.");
             }
 
             lastMousePos = currentMousePos;
