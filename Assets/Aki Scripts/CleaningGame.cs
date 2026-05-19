@@ -13,7 +13,7 @@ public class CleaningGame : MonoBehaviour
     public Sprite tooSoftSprite;
 
     [Header("Game Settings")]
-    public float safeWipeSpeed = 15f;
+    public float safeWipeSpeed = 30f;
     public float minWipeSpeed = 1.5f;
     public GameObject scratchMaskPrefab;
     public float scratchCooldown = 0.2f;

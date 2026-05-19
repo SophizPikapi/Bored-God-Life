@@ -4,6 +4,7 @@ public class KeyboardGameManager : MonoBehaviour
 {
     public GameManager refToGM;
     public static KeyboardGameManager Instance;
+    public KeyboardDamageVisuals keyboardVisuals;
 
     [Header("Game Stats")]
     public int dirtLeft = 8;
@@ -31,10 +32,15 @@ public class KeyboardGameManager : MonoBehaviour
         scratchesMade++;
         Debug.Log($"Scratch made! Total scratches: {scratchesMade}");
 
-        if (scratchesMade >= 4)
+        if (scratchesMade >= 3)
         {
             winCondition = "lose";
             Debug.LogError("GAME OVER! You scratched the keyboard too much. State: " + winCondition);
+        }
+        // If this slot is empty (null), the GameManager just quietly gives up and skips it!
+        if (keyboardVisuals != null)
+        {
+            keyboardVisuals.UpdateDamageSprite();
         }
     }
 
