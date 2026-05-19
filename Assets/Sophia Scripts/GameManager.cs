@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager selfRef;
 
-    public float timer = 10f;
-
     public int pointScored;
     public int difficultyLevel;
     public int gameLoop;
@@ -24,6 +22,14 @@ public class GameManager : MonoBehaviour
     public bool sharkWin = false;
     public bool keyboardWin = false;
 
+    [Header("Lose Conditions")]
+    public bool dogLose = false;
+    public bool calendarLose = false;
+    public bool starLose = false;
+    public bool mouseLose = false;
+    public bool sharkLose = false;
+    public bool keyboardLose = false;
+
     [Header("Played Conditions")]
     public bool dogPlayed;
     public bool calendarPlayed;
@@ -34,7 +40,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        timer = 10f;
         Cursor.visible = false;
 
         gameLoop = 0;
@@ -44,8 +49,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (gameStart)
-
-        timer -= Time.deltaTime;
 
         // STAR WIN
         if (starWin)
@@ -83,7 +86,7 @@ public class GameManager : MonoBehaviour
             LoadRandomScene();
         }
 
-        // Shark WIN
+        // SHARK WIN
         else if (sharkWin)
         {
             sharkPlayed = true;
@@ -97,6 +100,63 @@ public class GameManager : MonoBehaviour
         {
             keyboardPlayed = true;
             pointScored++;
+
+            LoadRandomScene();
+        }
+
+
+
+
+        // STAR LOSE
+        if (starLose)
+        {
+            starPlayed = true;
+            gameLives--;
+
+            LoadRandomScene();
+        }
+
+        // CALENDAR LOSE
+        else if (calendarLose)
+        {
+            calendarPlayed = true;
+            gameLives--;
+
+            LoadRandomScene();
+        }
+
+        // MOUSE LOSE
+        else if (mouseLose)
+        {
+            mousePlayed = true;
+            gameLives--;
+
+            LoadRandomScene();
+        }
+
+        // DOG LOSE
+        else if (dogLose)
+        {
+            dogPlayed = true;
+            gameLives--;
+
+            LoadRandomScene();
+        }
+
+        // SHARK LOSE
+        else if (sharkLose)
+        {
+            sharkPlayed = true;
+            gameLives--;
+
+            LoadRandomScene();
+        }
+
+        //KEYBOARD LOSE
+        else if (keyboardLose)
+        {
+            keyboardPlayed = true;
+            gameLives--;
 
             LoadRandomScene();
         }
@@ -139,6 +199,5 @@ public class GameManager : MonoBehaviour
         int randomIndex = Random.Range(0, availableScenes.Count + 1);
 
         SceneManager.LoadScene(availableScenes[randomIndex]);
-        timer = 10f;
     }
 }
