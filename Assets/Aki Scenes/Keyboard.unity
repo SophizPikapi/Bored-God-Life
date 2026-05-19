@@ -885,7 +885,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c915458c1f5b8448acd58ca3bd35ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 10
   pointScored: 0
   difficultyLevel: 0
   gameLoop: 0
@@ -897,6 +896,12 @@ MonoBehaviour:
   mouseWin: 0
   sharkWin: 0
   keyboardWin: 0
+  dogLose: 0
+  calendarLose: 0
+  starLose: 0
+  mouseLose: 0
+  sharkLose: 0
+  keyboardLose: 0
   dogPlayed: 0
   calendarPlayed: 0
   starPlayed: 0
@@ -1811,7 +1816,7 @@ GameObject:
   - component: {fileID: 2081019196}
   - component: {fileID: 2081019195}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: kbHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
