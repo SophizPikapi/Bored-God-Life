@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class KeyboardGameManager : MonoBehaviour
 {
+    public GameManager refToGM;
     public static KeyboardGameManager Instance;
 
     [Header("Game Stats")]
@@ -50,6 +51,7 @@ public class KeyboardGameManager : MonoBehaviour
         {
             winCondition = "win";
             Debug.Log("YOU WIN! The keyboard is perfectly clean. State: " + winCondition);
+            refToGM.keyboardWin = true;
         }
     }
 }

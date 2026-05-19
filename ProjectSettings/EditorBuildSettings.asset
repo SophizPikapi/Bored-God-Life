@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sydney Scene/Shark.unity
     guid: 41d46e38f9681a0438d00c0cc2c3a7b8
+  - enabled: 1
+    path: Assets/Aki Scenes/Keyboard.unity
+    guid: 1b00273ddaf97f445b0146c406463f0c
   m_configObjects: {}

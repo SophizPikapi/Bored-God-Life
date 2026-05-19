@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public bool starWin = false;
     public bool mouseWin = false;
     public bool sharkWin = false;
+    public bool keyboardWin = false;
 
     [Header("Played Conditions")]
     public bool dogPlayed;
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
     public bool starPlayed;
     public bool mousePlayed;
     public bool sharkPlayed;
+    public bool keyboardPlayed;
 
     void Start()
     {
@@ -90,6 +92,15 @@ public class GameManager : MonoBehaviour
             LoadRandomScene();
         }
 
+        //KEYBOARD WIN
+        else if (keyboardWin)
+        {
+            keyboardPlayed = true;
+            pointScored++;
+
+            LoadRandomScene();
+        }
+
     }
 
     void LoadRandomScene()
@@ -104,7 +115,7 @@ public class GameManager : MonoBehaviour
             availableScenes.Add("Calendar");
 
         if (!starPlayed)
-            availableScenes.Add("Star");
+            availableScenes.Add("Stars");
 
         if (!mousePlayed)
             availableScenes.Add("Mouse");
@@ -112,8 +123,13 @@ public class GameManager : MonoBehaviour
         if (!sharkPlayed)
             availableScenes.Add("Shark");
 
-        // If all scenes have been played
-        if (availableScenes.Count == 0)
+        if (!keyboardPlayed)
+        {
+            availableScenes.Add("Keyboard");
+        }
+
+            // If all scenes have been played
+            if (availableScenes.Count == 0)
         {
             SceneManager.LoadScene("Score");
             return;

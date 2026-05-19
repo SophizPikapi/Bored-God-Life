@@ -21,10 +21,15 @@ public class MainMenuStart : MonoBehaviour
             availableScenes.Add("Calendar");
 
         if (!refToGM.starPlayed)
-            availableScenes.Add("Star");
+            availableScenes.Add("Stars");
 
         if (!refToGM.mousePlayed)
             availableScenes.Add("Mouse");
+
+        if (!refToGM.keyboardPlayed)
+        {
+            availableScenes.Add("Keyboard");
+        }
 
         // Safety check
         if (availableScenes.Count == 0)
