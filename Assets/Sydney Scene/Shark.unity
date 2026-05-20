@@ -1162,7 +1162,7 @@ GameObject:
   - component: {fileID: 596590852}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1179,7 +1179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c915458c1f5b8448acd58ca3bd35ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointScored: 0
+  refToScore: {fileID: 0}
   difficultyLevel: 0
   gameLoop: 0
   gameLives: 0
@@ -1202,6 +1202,9 @@ MonoBehaviour:
   mousePlayed: 0
   sharkPlayed: 0
   keyboardPlayed: 0
+  refToScoreKeeper: {fileID: 2145800779}
+  scoreGM: 0
+  pointRef: {fileID: 2145800780}
 --- !u!4 &596590853
 Transform:
   m_ObjectHideFlags: 0
@@ -3479,6 +3482,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2145800779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2145800781}
+  - component: {fileID: 2145800780}
+  m_Layer: 0
+  m_Name: ScoreKeeper
+  m_TagString: scoreKeeper
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2145800780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145800779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902eaee43c7de53429279f3bdd0a516e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  refToGM: {fileID: 0}
+--- !u!4 &2145800781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145800779}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.11927016, y: 0.8832828, z: 0.014596602}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5937485558735089849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3535,6 +3584,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6062485423651315948, guid: a40489fe40303ae4eb5d7a06ce5e9abe, type: 3}
+      propertyPath: m_SortingOrder
+      value: 32766
+      objectReference: {fileID: 0}
     - target: {fileID: 8397351935443934320, guid: a40489fe40303ae4eb5d7a06ce5e9abe, type: 3}
       propertyPath: refToGM
       value: 
@@ -3552,6 +3605,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 596590853}
   - {fileID: 745947336}
   - {fileID: 476410930}
   - {fileID: 394445653}
@@ -3566,6 +3620,6 @@ SceneRoots:
   - {fileID: 2134875666}
   - {fileID: 1452772414}
   - {fileID: 198092052}
-  - {fileID: 596590853}
   - {fileID: 5937485558735089849}
   - {fileID: 817137955}
+  - {fileID: 2145800781}

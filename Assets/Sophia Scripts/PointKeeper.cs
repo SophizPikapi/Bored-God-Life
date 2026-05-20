@@ -2,25 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scoreKeeperScript : MonoBehaviour
+public class PointKeeper : MonoBehaviour
 {
-    public static int score;
-    public GameManager refToGM;
-    public static scoreKeeperScript selfRef;
-
+    public int score;
+    public GameObject refToGM;
+    public static PointKeeper selfRef;
     // Start is called before the first frame update
     void Start()
     {
-        selfRef = this;
         DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (refToGM.gameStart)
-        {
-
-        }
+        refToGM = GameObject.FindGameObjectWithTag("GM");
     }
 }

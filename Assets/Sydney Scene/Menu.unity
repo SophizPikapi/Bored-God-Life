@@ -877,27 +877,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 717460495}
-  - component: {fileID: 717460494}
+  - component: {fileID: 717460496}
   m_Layer: 0
-  m_Name: scoreKeeper
+  m_Name: ScoreKeeper
   m_TagString: scoreKeeper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &717460494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717460493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faa84ad7052f3c447abb2bb6d1a68e40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refToGM: {fileID: 848848279}
 --- !u!4 &717460495
 Transform:
   m_ObjectHideFlags: 0
@@ -913,6 +900,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &717460496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717460493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902eaee43c7de53429279f3bdd0a516e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  refToGM: {fileID: 0}
 --- !u!1 &814512250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +1010,7 @@ GameObject:
   - component: {fileID: 848848279}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1026,6 +1027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c915458c1f5b8448acd58ca3bd35ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refToScore: {fileID: 0}
   difficultyLevel: 0
   gameLoop: 0
   gameLives: 0
@@ -1048,7 +1050,9 @@ MonoBehaviour:
   mousePlayed: 0
   sharkPlayed: 0
   keyboardPlayed: 0
+  refToScoreKeeper: {fileID: 0}
   scoreGM: 0
+  pointRef: {fileID: 717460496}
 --- !u!4 &848848280
 Transform:
   m_ObjectHideFlags: 0
@@ -11951,6 +11955,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 717460495}
   - {fileID: 848848280}
   - {fileID: 606051127}
   - {fileID: 1771165218}
@@ -11961,4 +11966,3 @@ SceneRoots:
   - {fileID: 280878901}
   - {fileID: 916416445}
   - {fileID: 879254851}
-  - {fileID: 717460495}

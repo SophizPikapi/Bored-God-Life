@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public scoreKeeperScript refToScore;
     public static GameManager selfRef;
     public int difficultyLevel;
     public int gameLoop;
@@ -37,8 +38,9 @@ public class GameManager : MonoBehaviour
     public bool keyboardPlayed;
 
     [Header("Score Keeper")]
-    GameObject refToScoreKeeper;
+    public GameObject refToScoreKeeper;
     public int scoreGM;
+    public PointKeeper pointRef;
 
     void Start()
     {
@@ -59,7 +61,7 @@ public class GameManager : MonoBehaviour
         if (starWin)
         {
             starPlayed = true;
-            
+              pointRef.score++;
             LoadRandomScene();
         }
 
