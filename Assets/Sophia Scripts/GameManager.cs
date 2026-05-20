@@ -36,6 +36,10 @@ public class GameManager : MonoBehaviour
     public bool sharkPlayed;
     public bool keyboardPlayed;
 
+    [Header("Score Keeper")]
+    GameObject refToScoreKeeper;
+    public int scoreGM;
+
     void Start()
     {
         selfRef = this;
@@ -47,13 +51,15 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        refToScoreKeeper = GameObject.FindGameObjectWithTag("scoreKeeper");
+
         if (gameStart)
 
         // STAR WIN
         if (starWin)
         {
             starPlayed = true;
-
+            
             LoadRandomScene();
         }
 
@@ -61,7 +67,7 @@ public class GameManager : MonoBehaviour
         else if (calendarWin)
         {
             calendarPlayed = true;
-
+            scoreGM++;
             LoadRandomScene();
         }
 
@@ -69,7 +75,7 @@ public class GameManager : MonoBehaviour
         else if (mouseWin)
         {
             mousePlayed = true;
-
+            scoreGM++;
             LoadRandomScene();
         }
 
@@ -77,7 +83,7 @@ public class GameManager : MonoBehaviour
         else if (dogWin)
         {
             dogPlayed = true;
-
+            scoreGM++;
             LoadRandomScene();
         }
 
@@ -85,6 +91,7 @@ public class GameManager : MonoBehaviour
         else if (sharkWin)
         {
             sharkPlayed = true;
+            scoreGM++;
 
             LoadRandomScene();
         }
@@ -93,7 +100,7 @@ public class GameManager : MonoBehaviour
         else if (keyboardWin)
         {
             keyboardPlayed = true;
-
+            scoreGM++;
             LoadRandomScene();
         }
 

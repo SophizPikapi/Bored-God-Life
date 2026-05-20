@@ -16,6 +16,7 @@ TagManager:
   - Time2
   - Time3
   - Time4
+  - scoreKeeper
   layers:
   - Default
   - TransparentFX

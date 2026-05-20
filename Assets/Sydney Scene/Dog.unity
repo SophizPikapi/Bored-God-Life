@@ -1447,7 +1447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c915458c1f5b8448acd58ca3bd35ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointScored: 0
   difficultyLevel: 0
   gameLoop: 0
   gameLives: 0
@@ -1470,6 +1469,7 @@ MonoBehaviour:
   mousePlayed: 0
   sharkPlayed: 0
   keyboardPlayed: 0
+  scoreGM: 0
 --- !u!4 &1223969312
 Transform:
   m_ObjectHideFlags: 0
