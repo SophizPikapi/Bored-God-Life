@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager selfRef;
-
-    public int pointScored;
     public int difficultyLevel;
     public int gameLoop;
     public int gameLives;
@@ -40,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        selfRef = this;
         Cursor.visible = false;
 
         gameLoop = 0;
@@ -54,7 +53,6 @@ public class GameManager : MonoBehaviour
         if (starWin)
         {
             starPlayed = true;
-            pointScored++;
 
             LoadRandomScene();
         }
@@ -63,7 +61,6 @@ public class GameManager : MonoBehaviour
         else if (calendarWin)
         {
             calendarPlayed = true;
-            pointScored++;
 
             LoadRandomScene();
         }
@@ -72,7 +69,6 @@ public class GameManager : MonoBehaviour
         else if (mouseWin)
         {
             mousePlayed = true;
-            pointScored++;
 
             LoadRandomScene();
         }
@@ -81,7 +77,6 @@ public class GameManager : MonoBehaviour
         else if (dogWin)
         {
             dogPlayed = true;
-            pointScored++;
 
             LoadRandomScene();
         }
@@ -90,7 +85,6 @@ public class GameManager : MonoBehaviour
         else if (sharkWin)
         {
             sharkPlayed = true;
-            pointScored++;
 
             LoadRandomScene();
         }
@@ -99,7 +93,6 @@ public class GameManager : MonoBehaviour
         else if (keyboardWin)
         {
             keyboardPlayed = true;
-            pointScored++;
 
             LoadRandomScene();
         }

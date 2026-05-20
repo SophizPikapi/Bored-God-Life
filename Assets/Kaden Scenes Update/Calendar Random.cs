@@ -20,7 +20,7 @@ public class CalendarRandom : MonoBehaviour
         randomCalendar = Random.Range(0, calendarList.Count);
         randomText = Random.Range(0, TextList.Count);
 
-        calendarList[randomCalendar].GetComponent<SpriteRenderer>().color = Color.green;
+        calendarList[randomCalendar].GetComponent<SpriteRenderer>().color = Color.white;
         calendarList[randomCalendar].GetComponent<CalendarChoice>().isMeteor = true;
         refToText.transform.position = calendarList[randomCalendar].transform.position;
 

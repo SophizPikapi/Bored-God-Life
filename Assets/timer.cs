@@ -10,8 +10,8 @@ public class timer : MonoBehaviour
 
     public bool timerOn;
     public bool gameWon;
-    public float tickTimer;
-    public float fullTickTimer = 5;
+    public float fullTime = 10f;
+    public float currentTime = 10f;
     public GameManager refToGM;
 
     public GameObject timer1;
@@ -24,13 +24,14 @@ public class timer : MonoBehaviour
     public SpriteRenderer timer3Renderer;
     public SpriteRenderer timer4Renderer;
 
+
+
     public Color on;
     public Color off;
     
     // Start is called before the first frame update
     void Start()
     {
-        tickTimer = 5;
         timer1 = GameObject.FindGameObjectWithTag("Time1");
         timer2 = GameObject.FindGameObjectWithTag("Time2");
         timer3 = GameObject.FindGameObjectWithTag("Time3");
@@ -68,10 +69,14 @@ public class timer : MonoBehaviour
 
         if (timerOn == true )
         {
-            tickTimer -= Time.deltaTime;
+            currentTime -= Time.deltaTime;
+
+            float ratio = currentTime / fullTime;
+            Vector3 currentScale = transform.localScale;
+            transform.localScale = new Vector3(Mathf.Clamp(ratio, 0f, 1f), currentScale.y, currentScale.z);
 
             //win while timer ongoing
-            if (tickTimer > 0.01f)
+            if (currentTime > 0.01f)
             {
                 if (sceneName == "Shark")
                 {
@@ -123,7 +128,7 @@ public class timer : MonoBehaviour
             }
 
             // timer runs out
-            if (tickTimer <= 0.01)
+            if (currentTime <= 0f)
             {
                 timerOn = false;
 
@@ -181,37 +186,37 @@ public class timer : MonoBehaviour
         }
         if (!timerOn)
         {
-            tickTimer = 5;
+            currentTime = 10f;
         }
 
-        if (tickTimer <= fullTickTimer * 0.75f)
-        {
-            timer1Renderer.color = off;
-            timer2Renderer.color = on;
-            timer3Renderer.color = on;
-            timer4Renderer.color = on;
-        }
-        if (tickTimer <= fullTickTimer * 0.5f)
-        {
-            timer1Renderer.color = off;
-            timer2Renderer.color = off;
-            timer3Renderer.color = on;
-            timer4Renderer.color = on;
-        }
-        if (tickTimer <= fullTickTimer * 0.25f)
-        {
-            timer1Renderer.color = off;
-            timer2Renderer.color = off;
-            timer3Renderer.color = off;
-            timer4Renderer.color = on;
-        }
-        if (tickTimer <= fullTickTimer * 0f)
-        {
-            timer1Renderer.color = off;
-            timer2Renderer.color = off;
-            timer3Renderer.color = off;
-            timer4Renderer.color = off;
-        }
+        //if (tickTimer <= fullTickTimer * 0.75f)
+        //{
+        //    timer1Renderer.color = off;
+        //    timer2Renderer.color = on;
+        //    timer3Renderer.color = on;
+        //    timer4Renderer.color = on;
+        //}
+        //if (tickTimer <= fullTickTimer * 0.5f)
+        //{
+        //    timer1Renderer.color = off;
+        //    timer2Renderer.color = off;
+        //    timer3Renderer.color = on;
+        //    timer4Renderer.color = on;
+        //}
+        //if (tickTimer <= fullTickTimer * 0.25f)
+        //{
+        //    timer1Renderer.color = off;
+        //    timer2Renderer.color = off;
+        //    timer3Renderer.color = off;
+        //    timer4Renderer.color = on;
+        //}
+        //if (tickTimer <= fullTickTimer * 0f)
+        //{
+        //    timer1Renderer.color = off;
+        //    timer2Renderer.color = off;
+        //    timer3Renderer.color = off;
+        //    timer4Renderer.color = off;
+        //}
 
     }
 }
