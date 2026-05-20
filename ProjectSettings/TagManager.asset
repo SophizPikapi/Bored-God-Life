@@ -10,6 +10,12 @@ TagManager:
   - badTooth
   - Mouse
   - Electricity
+  - Keyboard
+  - Dirt
+  - Time1
+  - Time2
+  - Time3
+  - Time4
   layers:
   - Default
   - TransparentFX
