@@ -694,7 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refToGM: {fileID: 614603914}
   keyboardVisuals: {fileID: 2081019195}
-  dirtLeft: 3
+  dirtLeft: 8
   scratchesMade: 0
   winCondition: playing
 --- !u!4 &329821521

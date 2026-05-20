@@ -51,10 +51,10 @@ public class KeyboardGameManager : MonoBehaviour
  
         if (winCondition != "playing") return;
 
-        dirtLeft--;
+        dirtLeft = dirtLeft - 1;
         Debug.Log($"Dirt cleaned! Dirt left: {dirtLeft}");
 
-        if (dirtLeft <= 0)
+        if (dirtLeft == 0)
         {
             winCondition = "win";
             Debug.Log("YOU WIN! The keyboard is perfectly clean. State: " + winCondition);
