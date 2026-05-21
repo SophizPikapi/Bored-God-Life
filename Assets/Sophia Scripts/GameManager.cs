@@ -63,7 +63,9 @@ public class GameManager : MonoBehaviour
             starPlayed = true;
             PointKeeper.score++;
             LoadRandomScene();
-        }
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+            }
 
         // CALENDAR WIN
         else if (calendarWin)
@@ -71,7 +73,9 @@ public class GameManager : MonoBehaviour
             calendarPlayed = true;
             PointKeeper.score++;
             LoadRandomScene();
-        }
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+            }
 
         // MOUSE WIN
         else if (mouseWin)
@@ -79,7 +83,9 @@ public class GameManager : MonoBehaviour
             mousePlayed = true;
             PointKeeper.score++;
             LoadRandomScene();
-        }
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+            }
 
         // DOG WIN
         else if (dogWin)
@@ -87,7 +93,9 @@ public class GameManager : MonoBehaviour
             dogPlayed = true;
             PointKeeper.score++;
             LoadRandomScene();
-        }
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+            }
 
         // SHARK WIN
         else if (sharkWin)
@@ -95,7 +103,9 @@ public class GameManager : MonoBehaviour
             sharkPlayed = true;
             PointKeeper.score++;
             LoadRandomScene();
-        }
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+            }
 
         //KEYBOARD WIN
         else if (keyboardWin)
@@ -103,7 +113,9 @@ public class GameManager : MonoBehaviour
             keyboardPlayed = true;
             PointKeeper.score++;
             LoadRandomScene();
-        }
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+            }
 
 
 
@@ -115,6 +127,8 @@ public class GameManager : MonoBehaviour
             PointKeeper.livesLeft -= 1;
 
             LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
         }
 
         // CALENDAR LOSE
@@ -124,6 +138,8 @@ public class GameManager : MonoBehaviour
             PointKeeper.livesLeft -= 1;
 
             LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
         }
 
         // MOUSE LOSE
@@ -133,6 +149,8 @@ public class GameManager : MonoBehaviour
             PointKeeper.livesLeft -= 1;
 
             LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
         }
 
         // DOG LOSE
@@ -142,6 +160,8 @@ public class GameManager : MonoBehaviour
             PointKeeper.livesLeft -= 1;
 
             LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
         }
 
         // SHARK LOSE
@@ -151,6 +171,8 @@ public class GameManager : MonoBehaviour
             PointKeeper.livesLeft -= 1;
 
             LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
         }
 
         //KEYBOARD LOSE
