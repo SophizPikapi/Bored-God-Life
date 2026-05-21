@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         if (starWin)
         {
             starPlayed = true;
-              pointRef.score++;
+            PointKeeper.score++;
             LoadRandomScene();
         }
 
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         else if (calendarWin)
         {
             calendarPlayed = true;
-            scoreGM++;
+            PointKeeper.score++;
             LoadRandomScene();
         }
 
@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         else if (mouseWin)
         {
             mousePlayed = true;
-            scoreGM++;
+            PointKeeper.score++;
             LoadRandomScene();
         }
 
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
         else if (dogWin)
         {
             dogPlayed = true;
-            scoreGM++;
+            PointKeeper.score++;
             LoadRandomScene();
         }
 
@@ -93,8 +93,7 @@ public class GameManager : MonoBehaviour
         else if (sharkWin)
         {
             sharkPlayed = true;
-            scoreGM++;
-
+            PointKeeper.score++;
             LoadRandomScene();
         }
 
@@ -102,7 +101,7 @@ public class GameManager : MonoBehaviour
         else if (keyboardWin)
         {
             keyboardPlayed = true;
-            scoreGM++;
+            PointKeeper.score++;
             LoadRandomScene();
         }
 
@@ -113,7 +112,7 @@ public class GameManager : MonoBehaviour
         if (starLose)
         {
             starPlayed = true;
-            gameLives--;
+            PointKeeper.livesLeft -= 1;
 
             LoadRandomScene();
         }
@@ -122,7 +121,7 @@ public class GameManager : MonoBehaviour
         else if (calendarLose)
         {
             calendarPlayed = true;
-            gameLives--;
+            PointKeeper.livesLeft -= 1;
 
             LoadRandomScene();
         }
@@ -131,7 +130,7 @@ public class GameManager : MonoBehaviour
         else if (mouseLose)
         {
             mousePlayed = true;
-            gameLives--;
+            PointKeeper.livesLeft -= 1;
 
             LoadRandomScene();
         }
@@ -140,7 +139,7 @@ public class GameManager : MonoBehaviour
         else if (dogLose)
         {
             dogPlayed = true;
-            gameLives--;
+            PointKeeper.livesLeft -= 1;
 
             LoadRandomScene();
         }
@@ -149,7 +148,7 @@ public class GameManager : MonoBehaviour
         else if (sharkLose)
         {
             sharkPlayed = true;
-            gameLives--;
+            PointKeeper.livesLeft -= 1;
 
             LoadRandomScene();
         }
@@ -158,9 +157,11 @@ public class GameManager : MonoBehaviour
         else if (keyboardLose)
         {
             keyboardPlayed = true;
-            gameLives--;
+            PointKeeper.livesLeft -= 1;
 
             LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
         }
 
     }

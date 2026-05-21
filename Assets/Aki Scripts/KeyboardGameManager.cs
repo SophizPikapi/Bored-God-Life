@@ -35,7 +35,8 @@ public class KeyboardGameManager : MonoBehaviour
         if (scratchesMade >= 3)
         {
             winCondition = "lose";
-            Debug.LogError("GAME OVER! You scratched the keyboard too much. State: " + winCondition);
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
             refToGM.keyboardLose = true;
         }
         // If this slot is empty (null), the GameManager just quietly gives up and skips it!

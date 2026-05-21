@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PointKeeper : MonoBehaviour
 {
-    public int score;
+    public static int score = 0;
+    public static int livesLeft = 3;
     public GameObject refToGM;
     public static PointKeeper selfRef;
     // Start is called before the first frame update
