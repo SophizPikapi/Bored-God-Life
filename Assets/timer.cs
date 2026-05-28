@@ -74,6 +74,7 @@ public class timer : MonoBehaviour
             float ratio = currentTime / fullTime;
             Vector3 currentScale = transform.localScale;
             transform.localScale = new Vector3(Mathf.Clamp(ratio, 0f, 1f), currentScale.y, currentScale.z);
+            
 
             //win while timer ongoing
             if (currentTime > 0.01f)
