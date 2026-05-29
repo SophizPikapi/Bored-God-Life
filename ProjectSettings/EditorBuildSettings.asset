@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Aki Scenes/Keyboard.unity
     guid: 1b00273ddaf97f445b0146c406463f0c
+  - enabled: 1
+    path: Assets/Sydney Scene/Scoreboard.unity
+    guid: 41734f0d0f524af41aeb7a0fb89e0aab
   m_configObjects: {}

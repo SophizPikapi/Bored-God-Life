@@ -498,6 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5789afc4b4cd78458a3bb1b90e12945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refToGM: {fileID: 596590852}
   sharkManager: {fileID: 806311189}
 --- !u!60 &320270885
 PolygonCollider2D:
@@ -683,6 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5789afc4b4cd78458a3bb1b90e12945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refToGM: {fileID: 596590852}
   sharkManager: {fileID: 806311189}
 --- !u!60 &353693713
 PolygonCollider2D:
@@ -876,6 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5789afc4b4cd78458a3bb1b90e12945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refToGM: {fileID: 596590852}
   sharkManager: {fileID: 806311189}
 --- !u!60 &374875086
 PolygonCollider2D:
@@ -1500,6 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5789afc4b4cd78458a3bb1b90e12945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refToGM: {fileID: 596590852}
   sharkManager: {fileID: 806311189}
 --- !u!60 &902678464
 PolygonCollider2D:
@@ -1693,6 +1697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5789afc4b4cd78458a3bb1b90e12945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refToGM: {fileID: 596590852}
   sharkManager: {fileID: 806311189}
 --- !u!60 &1005693720
 PolygonCollider2D:
@@ -2093,6 +2098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5789afc4b4cd78458a3bb1b90e12945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refToGM: {fileID: 596590852}
   sharkManager: {fileID: 806311189}
 --- !u!60 &1503591108
 PolygonCollider2D:
@@ -2539,6 +2545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5789afc4b4cd78458a3bb1b90e12945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refToGM: {fileID: 596590852}
   sharkManager: {fileID: 806311189}
 --- !u!60 &1650259543
 PolygonCollider2D:
@@ -3129,6 +3136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5789afc4b4cd78458a3bb1b90e12945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  refToGM: {fileID: 596590852}
   sharkManager: {fileID: 806311189}
 --- !u!60 &2084873750
 PolygonCollider2D:
@@ -3489,6 +3497,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refToGM: {fileID: 0}
+  scoreLevel: 
+  finalScore: {fileID: 0}
 --- !u!4 &2145800781
 Transform:
   m_ObjectHideFlags: 0

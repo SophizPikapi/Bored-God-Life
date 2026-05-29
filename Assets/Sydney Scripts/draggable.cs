@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class draggable : MonoBehaviour
 {
+    public GameManager refToGM;
     Vector3 mousePositionOffset;
     public GameObject sharkManager;
 
@@ -24,6 +25,7 @@ public class draggable : MonoBehaviour
         {
             Debug.Log("game over!");
             sharkManager.GetComponent<sharkManagerScript>().loseScreen.transform.position = new Vector2(0, 0);
+            refToGM.sharkLose = true;
         }
     }
 
