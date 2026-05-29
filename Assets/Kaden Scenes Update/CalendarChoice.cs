@@ -24,5 +24,9 @@ public class CalendarChoice : MonoBehaviour
             refToGM.calendarWin = true;
             Debug.Log("YOU WIN");
         }
+        else if (!isMeteor)
+        {
+            refToGM.calendarLose = true;
+        }
     }
 }
