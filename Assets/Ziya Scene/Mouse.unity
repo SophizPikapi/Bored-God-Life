@@ -1159,6 +1159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refToGM: {fileID: 0}
+  scoreLevel: 
+  finalScore: {fileID: 0}
 --- !u!4 &2137958564
 Transform:
   m_ObjectHideFlags: 0
@@ -1190,6 +1192,10 @@ PrefabInstance:
       propertyPath: speed
       value: 800
       objectReference: {fileID: 0}
+    - target: {fileID: 89429622769668616, guid: f749cc018d462c24a8b82ead9fa419e2, type: 3}
+      propertyPath: refToGM
+      value: 
+      objectReference: {fileID: 320133059}
     - target: {fileID: 268039424160357638, guid: f749cc018d462c24a8b82ead9fa419e2, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
       value: 4294967295

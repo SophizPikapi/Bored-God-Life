@@ -40,6 +40,7 @@ public class mouseFollow : MonoBehaviour
             {
                 Debug.Log("game Over!");
                 loseScreen.transform.position = new Vector2(0,0);
+                refToGM.dogLose = true;
             }
         }
         if (Input.GetKeyUp(KeyCode.Mouse0))
