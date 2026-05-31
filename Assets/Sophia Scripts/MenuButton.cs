@@ -5,11 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuButton : MonoBehaviour
 {
-    GameObject pointKeeper;
     // Start is called before the first frame update
     void Start()
     {
-        pointKeeper = GameObject.FindGameObjectWithTag("scoreKeeper");
+
     }
 
     // Update is called once per frame
@@ -19,7 +18,6 @@ public class MenuButton : MonoBehaviour
     }
     public void OnMouseDown()
     {
-        Destroy(pointKeeper);
 
         SceneManager.LoadScene("Menu");
     }
