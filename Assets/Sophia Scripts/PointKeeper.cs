@@ -61,6 +61,7 @@ public class PointKeeper : MonoBehaviour
             SceneManager.LoadScene(scoreLevel);
             finalScore = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
             finalScore.text = "" + score;
+            livesLeft = 3;
         }
     }
 }

@@ -868,53 +868,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &717460493
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 717460495}
-  - component: {fileID: 717460496}
-  m_Layer: 0
-  m_Name: ScoreKeeper
-  m_TagString: scoreKeeper
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &717460495
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717460493}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11927016, y: 0.8832828, z: 0.014596602}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &717460496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717460493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 902eaee43c7de53429279f3bdd0a516e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  refToGM: {fileID: 0}
-  scoreLevel: Scoreboard
-  finalScore: {fileID: 0}
 --- !u!1 &814512250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,7 +1006,7 @@ MonoBehaviour:
   keyboardPlayed: 0
   refToScoreKeeper: {fileID: 0}
   scoreGM: 0
-  pointRef: {fileID: 717460496}
+  pointRef: {fileID: 0}
 --- !u!4 &848848280
 Transform:
   m_ObjectHideFlags: 0
@@ -11819,7 +11772,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1944577126, guid: 398b3dfa5d3709c48aace24302ab543c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11956,7 +11909,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 717460495}
   - {fileID: 848848280}
   - {fileID: 606051127}
   - {fileID: 1771165218}
