@@ -36,7 +36,24 @@ public class PointKeeper : MonoBehaviour
         lifeOne = GameObject.Find("HeartIcon");
         lifeTwo = GameObject.Find("HeartIcon (1)");
         lifeThree = GameObject.Find("HeartIcon (2)");
-        
+
+        if (sceneName == "Scoreboard")
+        {
+            if (finalScore == null)
+            {
+                GameObject scoreObj = GameObject.Find("Score Text");
+                if (scoreObj != null)
+                {
+                    finalScore = scoreObj.GetComponent<TMP_Text>();
+                }
+            }
+
+            if (finalScore != null)
+            {
+                finalScore.text = score.ToString();
+            }
+        }
+
         thisColorI = lifeOne.GetComponent<SpriteRenderer>().color;
         thisColorII = lifeTwo.GetComponent<SpriteRenderer>().color;
         thisColorIII = lifeThree.GetComponent<SpriteRenderer>().color;
@@ -60,8 +77,6 @@ public class PointKeeper : MonoBehaviour
         if (livesLeft <= 0)
         {
             SceneManager.LoadScene("Scoreboard");
-            finalScore = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
-            finalScore.text = "" + score;
         }
     }
 }
