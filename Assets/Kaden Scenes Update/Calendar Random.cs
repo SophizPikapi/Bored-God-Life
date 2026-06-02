@@ -5,7 +5,6 @@ using TMPro;
 
 public class CalendarRandom : MonoBehaviour
 {
-    //public CalendarChoice choice;
     public GameManager refToGM;
     public int randomCalendar;
     public int calendarSpot;
@@ -14,7 +13,7 @@ public class CalendarRandom : MonoBehaviour
     public TextMeshPro refToText;
     public List<GameObject> TextList = new List<GameObject>();
     public List<GameObject> calendarList = new List<GameObject>();
-    // Start is called before the first frame update
+
     void Start()
     {
         randomCalendar = Random.Range(0, calendarList.Count);
@@ -27,17 +26,21 @@ public class CalendarRandom : MonoBehaviour
         calendarList.RemoveAt(randomCalendar);
         TextList.RemoveAt(randomText);
 
-        for (int i = 0; i < calendarList.Count; i++)
+        while (calendarList.Count > 0 && TextList.Count > 0)
         {
             calendarSpot = Random.Range(0, calendarList.Count);
             textSpot = Random.Range(0, TextList.Count);
+
             print("TEST");
+
             TextList[textSpot].transform.position = calendarList[calendarSpot].transform.position;
+
+            // Remove used entries so they cannot be chosen again
+            calendarList.RemoveAt(calendarSpot);
+            TextList.RemoveAt(textSpot);
         }
-        //use get component to the randomly chosen date, access the script of that, 
     }
 
-    // Update is called once per frame
     void Update()
     {
 
