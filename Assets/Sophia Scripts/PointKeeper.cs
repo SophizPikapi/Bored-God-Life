@@ -24,6 +24,7 @@ public class PointKeeper : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(gameObject);
+        livesLeft = 3;
     }
 
     // Update is called once per frame
@@ -40,9 +41,9 @@ public class PointKeeper : MonoBehaviour
         thisColorII = lifeTwo.GetComponent<SpriteRenderer>().color;
         thisColorIII = lifeThree.GetComponent<SpriteRenderer>().color;
         scoreLevel = livesLeft;
+
         if (sceneName == "Menu")
         {
-            livesLeft = 3;
             score = 0;
         }
 
