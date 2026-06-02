@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class MainMenuStart : MonoBehaviour
 {
     public GameManager refToGM;
+    public Animator transition;
 
     private void OnMouseDown()
     {
+        transition.SetTrigger("Start");
         refToGM.gameStart = true;
 
         // Create a list of available scenes
