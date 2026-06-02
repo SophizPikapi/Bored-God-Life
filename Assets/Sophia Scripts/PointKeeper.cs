@@ -58,7 +58,7 @@ public class PointKeeper : MonoBehaviour
         }
         if (livesLeft <= 0)
         {
-            SceneManager.LoadScene(scoreLevel);
+            SceneManager.LoadScene("Scoreboard");
             finalScore = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
             finalScore.text = "" + score;
         }
