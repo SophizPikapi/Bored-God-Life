@@ -15,7 +15,7 @@ public class StarScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (starScore == 9)
+        if (starScore == 14)
         {
             refToGM.starWin = true;
         }
