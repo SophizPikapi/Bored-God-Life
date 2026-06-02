@@ -21,7 +21,7 @@ public class WinLoseScreens : MonoBehaviour
         {
             winScreen.transform.position = new Vector3(0, 0.65f, 0);
         }
-        if (rm.timer <= 0 && !refToGM.starWin)
+        if (rm.timer <= 0 && refToGM.starLose)
         {
             loseScreen.transform.position = new Vector3(0, 0.65f, 0);
         }
