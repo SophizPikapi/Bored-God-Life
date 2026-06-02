@@ -1,61 +1,228 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public scoreKeeperScript refToScore;
     public static GameManager selfRef;
-    public int starScore;
-    public int timer;
     public int difficultyLevel;
     public int gameLoop;
-    public int gameNum;
     public int gameLives;
-    public enum AllPlayState { Menu, Meteor, Dog, Dragon, Cheese, Star, Shark, Score };
-    public AllPlayState currentPlayState;
-    public List<Transform> randomGame = new List<Transform>();
+
+    public bool gameStart;
 
     [Header("Win Conditions")]
     public bool dogWin = false;
     public bool calendarWin = false;
     public bool starWin = false;
     public bool mouseWin = false;
-    // Start is called before the first frame update
+    public bool sharkWin = false;
+    public bool keyboardWin = false;
+
+    [Header("Lose Conditions")]
+    public bool dogLose = false;
+    public bool calendarLose = false;
+    public bool starLose = false;
+    public bool mouseLose = false;
+    public bool sharkLose = false;
+    public bool keyboardLose = false;
+
+    [Header("Played Conditions")]
+    public bool dogPlayed;
+    public bool calendarPlayed;
+    public bool starPlayed;
+    public bool mousePlayed;
+    public bool sharkPlayed;
+    public bool keyboardPlayed;
+
+    [Header("Score Keeper")]
+    public GameObject refToScoreKeeper;
+    public int scoreGM;
+    public PointKeeper pointRef;
+
     void Start()
     {
+        selfRef = this;
         Cursor.visible = false;
+
         gameLoop = 0;
-        gameNum = 0;
-        starScore = 0;
         gameLives = 3;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (difficultyLevel == 0)
+        refToScoreKeeper = GameObject.FindGameObjectWithTag("scoreKeeper");
+
+        if (gameStart)
+
+        // STAR WIN
+        if (starWin)
         {
-            if (starScore == 9)
-            {
-                Debug.Log("You win!");
-                starWin = true;
+            starPlayed = true;
+            PointKeeper.score++;
+            LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
             }
-        }
-        else if (difficultyLevel == 1)
+
+        // CALENDAR WIN
+        else if (calendarWin)
         {
-            if (starScore == 11)
-            {
-                Debug.Log("You win!");
-                starWin = true;
+            calendarPlayed = true;
+            PointKeeper.score++;
+            LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
             }
-        }
-        else if (difficultyLevel == 2)
+
+        // MOUSE WIN
+        else if (mouseWin)
         {
-            if (starScore == 13)
-            {
-                Debug.Log("You win!");
-                starWin = true;
+            mousePlayed = true;
+            PointKeeper.score++;
+            LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
             }
+
+        // DOG WIN
+        else if (dogWin)
+        {
+            dogPlayed = true;
+            PointKeeper.score++;
+            LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+            }
+
+        // SHARK WIN
+        else if (sharkWin)
+        {
+            sharkPlayed = true;
+            PointKeeper.score++;
+            LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+            }
+
+        //KEYBOARD WIN
+        else if (keyboardWin)
+        {
+            keyboardPlayed = true;
+            PointKeeper.score++;
+            LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+            }
+
+
+
+
+        // STAR LOSE
+        if (starLose)
+        {
+            starPlayed = true;
+            PointKeeper.livesLeft -= 1;
+
+            LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
         }
+
+        // CALENDAR LOSE
+        else if (calendarLose)
+        {
+            calendarPlayed = true;
+            PointKeeper.livesLeft -= 1;
+
+            LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+        }
+
+        // MOUSE LOSE
+        else if (mouseLose)
+        {
+            mousePlayed = true;
+            PointKeeper.livesLeft -= 1;
+
+            LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+        }
+
+        // DOG LOSE
+        else if (dogLose)
+        {
+            dogPlayed = true;
+            PointKeeper.livesLeft -= 1;
+
+            LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+        }
+
+        // SHARK LOSE
+        else if (sharkLose)
+        {
+            sharkPlayed = true;
+            PointKeeper.livesLeft -= 1;
+
+            LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+        }
+
+        //KEYBOARD LOSE
+        else if (keyboardLose)
+        {
+            keyboardPlayed = true;
+            PointKeeper.livesLeft -= 1;
+
+            LoadRandomScene();
+            Debug.LogError("Score: " + PointKeeper.score);
+            Debug.LogError("Live's left: " + PointKeeper.livesLeft);
+        }
+
+    }
+
+    void LoadRandomScene()
+    {
+        List<string> availableScenes = new List<string>();
+
+        // Only add scenes that haven't been played
+        if (!dogPlayed)
+            availableScenes.Add("Dog");
+
+        if (!calendarPlayed)
+            availableScenes.Add("Calendar");
+
+        if (!starPlayed)
+            availableScenes.Add("Stars");
+
+        if (!mousePlayed)
+            availableScenes.Add("Mouse");
+
+        if (!sharkPlayed)
+            availableScenes.Add("Shark");
+
+        if (!keyboardPlayed)
+        {
+            availableScenes.Add("Keyboard");
+        }
+
+            // If all scenes have been played
+            if (availableScenes.Count == 0)
+        {
+            SceneManager.LoadScene("Score");
+            return;
+        }
+
+        // Pick a random scene from remaining options
+        int randomIndex = Random.Range(0, availableScenes.Count + 1);
+
+        SceneManager.LoadScene(availableScenes[randomIndex]);
     }
 }

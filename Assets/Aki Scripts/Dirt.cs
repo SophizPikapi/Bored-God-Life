@@ -3,7 +3,7 @@ using UnityEngine;
 public class Dirt : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    public float fadeSpeed = 5f; // Cranked this up
+    public float fadeSpeed = 5f; 
 
     void Start()
     {
@@ -12,13 +12,14 @@ public class Dirt : MonoBehaviour
 
     public void CleanDirt()
     {
-        // For testing, let's make it drop by a HUGE chunk every frame you touch it
+
         Color c = spriteRenderer.color;
         c.a -= fadeSpeed * Time.deltaTime;
         spriteRenderer.color = c;
 
         if (c.a <= 0)
         {
+            KeyboardGameManager.Instance.DirtCleaned();
             Destroy(gameObject);
         }
     }

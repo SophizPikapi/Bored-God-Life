@@ -3,15 +3,30 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Shootable
+  - glassDog
+  - Teeth
+  - badTooth
+  - Mouse
+  - Electricity
+  - Keyboard
+  - Dirt
+  - Time1
+  - Time2
+  - Time3
+  - Time4
+  - scoreKeeper
+  - GM
+  - scoreTextOnTimer
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Mouse
   - Water
   - UI
-  - 
+  - Text
   - 
   - 
   - 

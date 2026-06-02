@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Sydney Scene/Menu.unity
+    guid: 6d9d0554de286464fbab2a36c84e2152
+  - enabled: 1
     path: Assets/Sophia Scenes/Stars.unity
     guid: 34ee9197169edf64a905b75caa296b75
   - enabled: 1
@@ -13,8 +16,17 @@ EditorBuildSettings:
     guid: 147751d6eea880849bf92cd0ccd2d49e
   - enabled: 1
     path: Assets/Sydney Scene/Dog.unity
-    guid: fce5980bc4f65ea4a880ecf9d31daf2d
+    guid: e7a1e67e28dc1f84cb01c716dbcea794
   - enabled: 1
     path: Assets/Ziya Scene/Mouse.unity
     guid: a7c2bdbcb3f86e94991bcd5b576160d1
+  - enabled: 1
+    path: Assets/Sydney Scene/Shark.unity
+    guid: 41d46e38f9681a0438d00c0cc2c3a7b8
+  - enabled: 1
+    path: Assets/Aki Scenes/Keyboard.unity
+    guid: 1b00273ddaf97f445b0146c406463f0c
+  - enabled: 1
+    path: Assets/Sydney Scene/Scoreboard.unity
+    guid: 41734f0d0f524af41aeb7a0fb89e0aab
   m_configObjects: {}

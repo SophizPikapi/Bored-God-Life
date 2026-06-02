@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MouseMovement : MonoBehaviour
 {
+    public GameManager refToGM;
     public Rigidbody2D rb;
     public bool Zapped = false;
     public bool GameStart = false;
@@ -64,6 +65,7 @@ public class MouseMovement : MonoBehaviour
             Debug.Log("ZAP");
 
             Zapped = true;
+            refToGM.mouseLose = true;
         }
 
         if (collision.gameObject.CompareTag("Finish"))
