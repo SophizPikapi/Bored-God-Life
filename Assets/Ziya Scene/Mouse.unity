@@ -1114,10 +1114,22 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 32764
       objectReference: {fileID: 0}
+    - target: {fileID: 2031306909471332772, guid: bd771044d9f12544c9ee1f6a6b982e12, type: 3}
+      propertyPath: m_SortingOrder
+      value: 32765
+      objectReference: {fileID: 0}
     - target: {fileID: 5547405511122058041, guid: bd771044d9f12544c9ee1f6a6b982e12, type: 3}
       propertyPath: refToGM
       value: 
       objectReference: {fileID: 320133059}
+    - target: {fileID: 6910268141286267300, guid: bd771044d9f12544c9ee1f6a6b982e12, type: 3}
+      propertyPath: m_SortingOrder
+      value: 32764
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332245660897791621, guid: bd771044d9f12544c9ee1f6a6b982e12, type: 3}
+      propertyPath: m_SortingOrder
+      value: 32763
+      objectReference: {fileID: 0}
     - target: {fileID: 7505156449585977436, guid: bd771044d9f12544c9ee1f6a6b982e12, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.71
@@ -1161,6 +1173,10 @@ PrefabInstance:
     - target: {fileID: 7535263557527795016, guid: bd771044d9f12544c9ee1f6a6b982e12, type: 3}
       propertyPath: m_Name
       value: updated Timer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7535263557527795016, guid: bd771044d9f12544c9ee1f6a6b982e12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
