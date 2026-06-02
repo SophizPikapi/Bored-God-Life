@@ -10,7 +10,7 @@ public class PointKeeper : MonoBehaviour
     public static int livesLeft = 3;
     public GameObject refToGM;
     public static PointKeeper selfRef;
-    public string scoreLevel;
+    public int scoreLevel;
     public TMP_Text finalScore;
     public GameObject lifeOne;
     public GameObject lifeTwo;
@@ -39,7 +39,7 @@ public class PointKeeper : MonoBehaviour
         thisColorI = lifeOne.GetComponent<SpriteRenderer>().color;
         thisColorII = lifeTwo.GetComponent<SpriteRenderer>().color;
         thisColorIII = lifeThree.GetComponent<SpriteRenderer>().color;
-        
+        scoreLevel = livesLeft;
         if (sceneName == "Menu")
         {
             livesLeft = 3;
