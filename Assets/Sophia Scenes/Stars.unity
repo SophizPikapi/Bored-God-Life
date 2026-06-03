@@ -8301,7 +8301,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10000
   m_Sprite: {fileID: 1231513350, guid: a98cff890b88d0e4d9370e4fd48b2c66, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13635,7 +13635,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 25
+  m_Radius: 15
 --- !u!96 &1554594901
 TrailRenderer:
   serializedVersion: 3
@@ -13866,9 +13866,6 @@ MonoBehaviour:
   difficultyLevel: 0
   gameLoop: 0
   gameLives: 0
-  transition: {fileID: 2071741380}
-  endOfLevelTimer: 0
-  endOfLevelTimerOn: 0
   gameStart: 1
   dogWin: 0
   calendarWin: 0
@@ -15433,11 +15430,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe8733ab7f21c2646bcc1ee490d2e4ae, type: 3}
---- !u!95 &2071741380 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 961834157780594984, guid: fe8733ab7f21c2646bcc1ee490d2e4ae, type: 3}
-  m_PrefabInstance: {fileID: 2071741379}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2108117503
 GameObject:
   m_ObjectHideFlags: 0

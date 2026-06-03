@@ -12,7 +12,7 @@ public class textDisappear : MonoBehaviour
     {
         isOn = true;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        timer = 1.5f;
+        timer = 2f;
     }
 
     // Update is called once per frame

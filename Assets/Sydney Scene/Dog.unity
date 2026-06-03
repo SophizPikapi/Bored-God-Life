@@ -1208,7 +1208,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10000
   m_Sprite: {fileID: -1455071130, guid: a98cff890b88d0e4d9370e4fd48b2c66, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1304,11 +1304,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe8733ab7f21c2646bcc1ee490d2e4ae, type: 3}
---- !u!95 &1182474922 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 961834157780594984, guid: fe8733ab7f21c2646bcc1ee490d2e4ae, type: 3}
-  m_PrefabInstance: {fileID: 1182474921}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1204848290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1467,6 @@ MonoBehaviour:
   difficultyLevel: 0
   gameLoop: 0
   gameLives: 0
-  transition: {fileID: 1182474922}
   gameStart: 0
   dogWin: 0
   calendarWin: 0
