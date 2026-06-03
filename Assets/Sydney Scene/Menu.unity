@@ -985,9 +985,6 @@ MonoBehaviour:
   difficultyLevel: 0
   gameLoop: 0
   gameLives: 0
-  transition: {fileID: 1259159090}
-  endOfLevelTimer: 0
-  endOfLevelTimerOn: 0
   gameStart: 0
   dogWin: 0
   calendarWin: 0
@@ -10998,6 +10995,7 @@ GameObject:
   - component: {fileID: 1316551238}
   - component: {fileID: 1316551240}
   - component: {fileID: 1316551241}
+  - component: {fileID: 1316551242}
   m_Layer: 0
   m_Name: start quit buttons_1
   m_TagString: Untagged
@@ -11134,6 +11132,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.57, y: 0.66}
   m_EdgeRadius: 0
+--- !u!114 &1316551242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316551237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7486d0848328ce64a8be72cfc0cfe6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1363150386
 GameObject:
   m_ObjectHideFlags: 0
